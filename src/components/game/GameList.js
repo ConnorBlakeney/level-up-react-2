@@ -9,11 +9,14 @@ export const GameList = props => {
     getGames()
   }, [])
 
-  console.log(games);
-
   return (
     <article className="games">
       <h1>Games</h1>
+      <button className="btn btn-2 btn-sep icon-create"
+        onClick={() => {
+            props.history.push({ pathname: "/games/new" })
+        }}
+        >Register New Game</button>
       <Link to="/games/new">Create Game</Link>
       {
         games.map(game => (
